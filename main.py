@@ -5,19 +5,13 @@ from salidas import *
 import time
 
 #marianofernandez@fra.utn.edu.ar
-
-print(":"*20 + " BIENVENIDO A PAYUT "+ ":"*20)
-print("Una billetera virtual para gestionar y agilizar tus pagos.")
-print("Su finalidad es poder realizar transferencia de forma simple y rápida")
-print("."*90)
-time.sleep(1)
+bienvenida_sistema()
 
 lista_usuarios = []
-
 usuario = cargar_usuario()
 lista_usuarios.append(usuario)
 
-bienvenida_inicial(lista_usuarios[0][5],lista_usuarios[0][6],lista_usuarios[0][2])
+bienvenida_personal(lista_usuarios[0][5],lista_usuarios[0][6],lista_usuarios[0][2])
 
 #CBU: 0321456789123456789123
 lista_cbu_destino = []
@@ -28,7 +22,7 @@ seguir= "si"
 
 while seguir == "si":
     
-    opcion = menu_opciones()
+    opcion = mostrar_menu_principal()
     match opcion:
         case "1":
             mostrar_datos_personales(lista_usuarios)
